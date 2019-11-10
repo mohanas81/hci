@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anas.hci.repository.ModuleRepository">
+    <resultMap id="baseResult"
+               type="com.anas.hci.model.entity.Module"
+               autoMapping="true"/>
+    <sql id="baseCol">
+        id,name
+    </sql>
+    <sql id="insertCol">
+        name,label
+    </sql>
+    <insert id ="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into module
+        (
+        <include refid="insertCol" />
+        )
+        VALUES (
+            #{name},
+            #{label}
+        )
+    </insert>
+</mapper>
