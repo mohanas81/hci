@@ -4,6 +4,6 @@ import com.anas.hci.model.entity.User;
 
 public interface UserRepository {
 
-    public void insert(User user);
+    public int insert(User user);
 
 }
